@@ -9,4 +9,23 @@
 
 public class Student {
     // TODO: Modify and complete this class
+    private int grade;
+    public Student(String firstName, String lastName, int phoneNumber, int grade) {
+        super(firstName, lastName, phoneNumber);
+        this.grade = grade;
+    }
+    public String getFirstName() {
+        return getFirstName();
+    }
+
+    public String getLastName() {
+        return getLastName();
+    }
+
+    public int getPhoneNumber() {
+        return getPhoneNumber();
+    }
+    public String toString(){
+        return toString() + "Grade: " + grade;
+    }
 }
