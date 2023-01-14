@@ -26,7 +26,7 @@ public class Person {
         return lastName;
     }
 
-    public int getPhonenumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
     public String toString(){

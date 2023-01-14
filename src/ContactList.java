@@ -8,13 +8,15 @@
  * @author: Ms. Namasivayam & Mr. Blick
  * @version: 2022-2023
  */
-
+import java.util.ArrayList;
 public class ContactList
 {
     // TODO: Create your array contacts
-
+    private ArrayList<Person> contacts;
     // TODO: Write a Constructor
-
+    public ContactList() {
+        contacts = new ArrayList<Person>();
+    }
     public void printMenuOptions() {
         System.out.println("Menu: ");
         System.out.println("1. Add Contact");
@@ -32,8 +34,9 @@ public class ContactList
      * Asks user for input to create and add a new Person
      * to the contact list
      */
-    public void addContact() {
+    public void addContact(Person p) {
         // TODO: Complete the addContact method
+        contacts.add(p);
     }
 
     /**
@@ -41,6 +44,9 @@ public class ContactList
      */
     public void printContacts() {
         // TODO: Complete the printContacts method
+        for (Person p : contacts) {
+            System.out.println(p.toString());
+        }
     }
 
     /**
@@ -50,6 +56,38 @@ public class ContactList
      */
     public void sort(int sortBy) {
         // TODO: Complete the sort method
+        //sorts by first name
+        if (sortBy == 0) {
+            for (int i = 0; i < contacts.size(); i++) {
+                if (contacts.get(i).getFirstName().compareTo(contacts.get(i + 1).getFirstName()) == 1 && (i != contacts.size() - 1)) {
+                    Person sub = contacts.get(i);
+                    contacts.add(i, contacts.remove(i + 1));
+                    contacts.add(i + 1, sub);
+                }
+            }
+        }
+        //sorts by last name
+        else if (sortBy == 1) {
+            if (sortBy == 0) {
+                for (int i = 0; i < contacts.size(); i++) {
+                    if (contacts.get(i).getLastName().compareTo(contacts.get(i + 1).getLastName()) == 1 && (i != contacts.size() - 1)) {
+                        Person sub = contacts.get(i);
+                        contacts.add(i, contacts.remove(i + 1));
+                        contacts.add(i + 1, sub);
+                    }
+                }
+            }
+        }
+        //sorts by phone number
+        else if (sortBy == 2) {
+            for (int i = 0; i < contacts.size(); i++) {
+                if (contacts.get(i).getPhoneNumber() > contacts.get(i + 1).getPhoneNumber() && i != contacts.size() - 1) {
+                    Person sub = contacts.get(i);
+                    contacts.add(i, contacts.remove(i + 1));
+                    contacts.add(i + 1, sub);
+                }
+            }
+        }
     }
 
     // TODO: Write searchByFirstName

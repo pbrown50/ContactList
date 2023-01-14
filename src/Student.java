@@ -7,7 +7,7 @@
  * @version: 2022-2023
  */
 
-public class Student {
+public class Student extends Person {
     // TODO: Modify and complete this class
     private int grade;
     public Student(String firstName, String lastName, int phoneNumber, int grade) {
@@ -26,6 +26,6 @@ public class Student {
         return getPhoneNumber();
     }
     public String toString(){
-        return toString() + "Grade: " + grade;
+        return super.toString() + "Grade: " + grade;
     }
 }
