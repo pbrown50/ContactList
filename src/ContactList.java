@@ -9,6 +9,7 @@
  * @version: 2022-2023
  */
 import java.util.ArrayList;
+import java.util.Scanner;
 public class ContactList
 {
     // TODO: Create your array contacts
@@ -91,16 +92,48 @@ public class ContactList
     }
 
     // TODO: Write searchByFirstName
+    public Person searchByFirstName(String firstName) {
+        sort(0);
+        for (Person p : contacts) {
+            if (firstName.equals(p.getFirstName())) {
+                return p;
+            }
+        }
+        return null;
+    }
 
     // TODO: Write searchByLastName
+    public Person searchByLastName(String lastName) {
+        sort(0);
+        for (Person p : contacts) {
+            if (lastName.equals(p.getLastName())) {
+                return p;
+            }
+        }
+        return null;
+    }
 
     // TODO: Write searchByPhoneNumber
+    public Person searchByPhoneNumber(int phoneNumber) {
+        sort(0);
+        for (Person p : contacts) {
+            if (phoneNumber == p.getPhoneNumber()) {
+                return p;
+            }
+        }
+        return null;
+    }
 
     /**
      * Lists just the Student objects in the Contact List
      */
     public void listStudents() {
         // TODO: Complete the listStudents method
+        for (Person p : contacts) {
+            if (p instanceof Student) {
+                System.out.println(p);
+            }
+        }
     }
 
     /**
@@ -113,6 +146,64 @@ public class ContactList
         printMenuOptions();
 
         // TODO: Complete the run method
+        Scanner s = new Scanner(System.in);
+        while(s.nextInt() != 0) {
+            if (s.nextInt() == 1) {
+                System.out.println("Select type of contact you would like to add:\n"
+                                    + "1. Student\n2. Employee");
+                if (s.nextInt() == 1) {
+                    System.out.println("Please enter the following information:");
+                    System.out.println("First Name:");
+                    String firstName = s.nextLine();
+                    System.out.println("Last Name:");
+                    String lastName = s.nextLine();
+                    System.out.println("Phone Number:");
+                    int phoneNumber = s.nextInt();
+                    System.out.println("Grade:");
+                    int grade = s.nextInt();
+                    Person p = new Student(firstName, lastName, phoneNumber, grade);
+                    addContact(p);
+                }
+                if (s.nextInt() == 2) {
+                    System.out.println("Please enter the following information:");
+                    System.out.println("First Name:");
+                    String firstName = s.nextLine();
+                    System.out.println("Last Name:");
+                    String lastName = s.nextLine();
+                    System.out.println("Phone Number:");
+                    int phoneNumber = s.nextInt();
+                    System.out.println("Salary:");
+                    double salary = s.nextDouble();
+                    Person p = new Employee(firstName, lastName, phoneNumber, salary);
+                    addContact(p);
+                }
+            }
+            if (s.nextInt() == 2) {
+                sort(0);
+                printContacts();
+            }
+            if (s.nextInt() == 3) {
+                sort(1);
+                printContacts();
+            }
+            if (s.nextInt() == 4) {
+                sort(2);
+                printContacts();
+            }
+            if (s.nextInt() == 5) {
+
+            }
+            if (s.nextInt() == 6) {
+
+            }
+            if (s.nextInt() == 7) {
+
+            }
+            if (s.nextInt() == 8) {
+
+            }
+        }
+
     }
 
 
