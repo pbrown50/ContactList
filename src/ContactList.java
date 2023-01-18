@@ -191,16 +191,19 @@ public class ContactList
                 printContacts();
             }
             if (s.nextInt() == 5) {
-
+                listStudents();
             }
             if (s.nextInt() == 6) {
-
+                System.out.println("Enter a name:");
+                System.out.println(searchByFirstName(s.nextLine()));
             }
             if (s.nextInt() == 7) {
-
+                System.out.println("Enter a name:");
+                System.out.println(searchByLastName(s.nextLine()));
             }
             if (s.nextInt() == 8) {
-
+                System.out.println("Enter a name:");
+                System.out.println(searchByPhoneNumber(s.nextInt()));
             }
         }
 
