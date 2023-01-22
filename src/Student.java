@@ -6,26 +6,32 @@
  * @author: Ms. Namasivayam & Mr. Blick
  * @version: 2022-2023
  */
-
+// subclass of person
 public class Student extends Person {
     // TODO: Modify and complete this class
-    private int grade;
-    public Student(String firstName, String lastName, int phoneNumber, int grade) {
+    // declares grade instance variable
+    private String grade;
+    // constructor initializes instance variables
+    public Student(String firstName, String lastName, String phoneNumber, String grade) {
+        // initializes attributes in superclass
         super(firstName, lastName, phoneNumber);
+        // initializes attribute in this class
         this.grade = grade;
     }
+    // returns first name
     public String getFirstName() {
-        return getFirstName();
+        return super.getFirstName();
     }
-
+    // returns last name
     public String getLastName() {
-        return getLastName();
+        return super.getLastName();
     }
-
-    public int getPhoneNumber() {
-        return getPhoneNumber();
+    // returns phone number
+    public String getPhoneNumber() {
+        return super.getPhoneNumber();
     }
+    // to string for student
     public String toString(){
-        return super.toString() + "Grade: " + grade;
+        return super.toString() + " Grade: " + grade;
     }
 }

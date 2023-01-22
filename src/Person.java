@@ -9,26 +9,29 @@
 
 public class Person {
     // TODO: Complete the Person class
+    // declares instance variables
     private String firstName;
     private String lastName;
-    private int phoneNumber;
-    public Person(String firstName, String lastName, int phoneNumber){
+    private String phoneNumber;
+    // constructor initializes instance variables
+    public Person(String firstName, String lastName, String phoneNumber){
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
     }
-
+    // returns first name
     public String getFirstName() {
         return firstName;
     }
-
+    // returns last name
     public String getLastName() {
         return lastName;
     }
-
-    public int getPhoneNumber() {
+    // returns phone number
+    public String getPhoneNumber() {
         return phoneNumber;
     }
+    // to string for Person
     public String toString(){
         return firstName + " " + lastName + " - #" + phoneNumber;
     }
